@@ -1,12 +1,14 @@
 export type TProductsTableState = {
-    products: TProductState[] | null
+    products: TProductState[] | null,
+    productsLoading: boolean,
+    productsLoadingError: string | null
 }
 
 export type TProductState = {
     id: number | null,
     title: string | null,
     description: string | null,
-    price: number,
+    price: number | null,
     discountPercentage: number | null,
     rating: number | null,
     stock: number | null,

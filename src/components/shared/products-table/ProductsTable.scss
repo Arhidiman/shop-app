@@ -1,0 +1,22 @@
+.products-table {
+    &-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }  
+    &-cell {
+        max-width: 350px;
+        white-space: break-word;
+        text-align: center;
+        flex: 1 1 0px;
+        &-desctiption {
+            flex: 2
+        }
+    } 
+    &-thumbnail {
+        width: 100px;
+        height: 100px;
+    } 
+    
+}

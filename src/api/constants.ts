@@ -1,1 +1,1 @@
-const baseUrl = "https://dummyjson.com/products"
+export const productsUrl = "https://dummyjson.com/products"

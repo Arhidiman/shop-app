@@ -1,5 +1,7 @@
 import { TProductsTableState } from "./types"
 
 export const initialState: TProductsTableState = {
-    products: null
+    products: null,
+    productsLoading: false,
+    productsLoadingError: null
 }

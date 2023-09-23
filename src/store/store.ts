@@ -2,6 +2,8 @@ import { combineReducers } from "redux";
 import { productsTableReducer } from "./products-table-reducer/productsTableReducer";
 
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
     productsTable: productsTableReducer
 })
+
+export default rootReducer
