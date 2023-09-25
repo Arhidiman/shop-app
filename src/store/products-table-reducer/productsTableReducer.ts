@@ -25,7 +25,6 @@ export const productsTableReducer = (state = initialState as TProductsTableState
             }
         }
         case SET_CURRENT_PRODUCTS_PAGE: {
-            console.log(action.payload)
             return {
                 ...state, currentProductsPage: action.payload
             }

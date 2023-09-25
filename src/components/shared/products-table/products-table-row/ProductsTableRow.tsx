@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"
 import { AppState } from "src/main"
 import { TProductState } from "src/store/products-table-reducer/types"
-
+import { memo } from "react"
+ 
 interface IProductsTableRow {
       productId?: number,
       className?: string
@@ -14,13 +15,13 @@ function ProductsTableRow({ productId, className }: IProductsTableRow) {
 
     return (
         <div className="products-table-row">
-            <li className={`products-table-cell title ${className}`}>{productId ? product.title : 'title'}</li>
-            <li className={`products-table-cell description ${className}`}>{productId ? product.description : 'description'}</li>
-            <li className={`products-table-cell ${className}`}>{productId ? product.price : 'price'}</li>
-            <li className={`products-table-cell ${className}`}>{productId ? product.rating : 'rating'}</li>
-            <li className={`products-table-cell ${className}`}>{productId ? product.stock : 'stock'}</li>
-            <li className={`products-table-cell ${className}`}>{productId ? product.brand : 'brand'}</li>
-            <li className={`products-table-cell ${className}`}>{productId ? product.category : 'category'}</li>
+            <li className={`products-table-cell title ${className}`}>{productId ? product.title : "title"}</li>
+            <li className={`products-table-cell description ${className}`}>{productId ? product.description : "description"}</li>
+            <li className={`products-table-cell ${className}`}>{productId ? product.price : "price"}</li>
+            <li className={`products-table-cell ${className}`}>{productId ? product.rating : "rating"}</li>
+            <li className={`products-table-cell ${className}`}>{productId ? product.stock : "stock"}</li>
+            <li className={`products-table-cell ${className}`}>{productId ? product.brand : "brand"}</li>
+            <li className={`products-table-cell ${className}`}>{productId ? product.category : "category"}</li>
             {
                 productId
                 ? 
@@ -32,4 +33,4 @@ function ProductsTableRow({ productId, className }: IProductsTableRow) {
     )
 }
 
-export default ProductsTableRow
+export default memo(ProductsTableRow)

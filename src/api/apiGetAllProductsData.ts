@@ -11,6 +11,7 @@ export const apiGetAllProductsData = (dispatch: Dispatch<AnyAction>) => {
         .get(productsUrl)
         .then((res) => {
             dispatch(setProductsDataAction(res.data.products))
+            dispatch(setProductsDataLoadingAction(false))
         })
         .catch((error: Error) => {
             dispatch(setProductsDataLoadingErrorAction(error.message))

@@ -1,6 +1,6 @@
 
-import Header from './components/shared/header/Header'
-import MainPage from './components/pages/main-page/MainPage'
+import Header from "./components/shared/header/Header"
+import MainPage from "./components/pages/main-page/MainPage"
 
 function App() {
     return (

@@ -9,7 +9,6 @@ export const apiSearchProductsByName = (dispatch: Dispatch<AnyAction>, productNa
     axios
         .get(searchProductUrl+productName)
         .then((res) => {
-            console.log(res.data)
             dispatch(setProductsDataAction(res.data.products))
         })
         .catch((error: Error) => {
