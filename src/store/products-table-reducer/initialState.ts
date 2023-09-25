@@ -4,7 +4,7 @@ export const initialState: TProductsTableState = {
     products: [],
     productsLoading: false,
     productsLoadingError: null,
-    productsInTablePage: 5,
+    productsInTablePage: 3,
     totalProductsPagesArray: [],
-    currentProductsPage: 2
+    currentProductsPage: 0
 }

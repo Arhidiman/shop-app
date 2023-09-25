@@ -5,7 +5,6 @@ const setProductsData = (state: TProductsTableState, payload: TProductState[]) =
     const products = payload
     const totalProducts = products.length
     const productsInTablePage = state.productsInTablePage
-
     const totalPages = Math.ceil(totalProducts/productsInTablePage)
 
     const getTotalPagesArray = (totalProducts: number, totalPages: number, productsInTablePage: number) => {
@@ -27,7 +26,9 @@ const setProductsData = (state: TProductsTableState, payload: TProductState[]) =
     const newState = {
         ...state, 
         products: payload,
-        totalProductsPagesArray: getTotalPagesArray(totalProducts, totalPages, productsInTablePage)
+        totalProductsPagesArray: getTotalPagesArray(totalProducts, totalPages, productsInTablePage),
+        currentProductsPage: 0
+        
     }
     return newState
 }

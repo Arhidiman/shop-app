@@ -14,7 +14,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-h1, div, ul, li {
+body,h1, div, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -22,3 +22,16 @@ h1, div, ul, li {
 li {
   list-style-type: none;
 }
+
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+

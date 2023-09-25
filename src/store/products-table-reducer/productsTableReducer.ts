@@ -30,7 +30,6 @@ export const productsTableReducer = (state = initialState as TProductsTableState
                 ...state, currentProductsPage: action.payload
             }
         }
-        
         default: return state
     }
 }

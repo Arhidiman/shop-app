@@ -1,10 +1,12 @@
 import "./ProductsTable.scss"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { apiGetAllProductsData } from "../../../api/apiGetAllProductsData"
-import { AppState } from "../../../main"
+import { apiGetAllProductsData } from "src/api/apiGetAllProductsData"
+import { apiSearchProductsByName } from "src/api/apiSearchProductsByName"
+import { AppState } from "src//main"
 import ProductsTableRow from "./products-table-row/ProductsTableRow"
-import { TProductState } from "../../../store/products-table-reducer/types"
+import { TProductState } from "src/store/products-table-reducer/types"
+import { SyntheticEvent } from 'react'
 
 function ProductsTable() {
 
@@ -16,14 +18,28 @@ function ProductsTable() {
         apiGetAllProductsData(dispatch)
     },[])
 
+    const searchProducts = (e: SyntheticEvent<HTMLInputElement>) => {
+
+        const inputElement = e.target as HTMLInputElement
+        const productName = inputElement.value 
+        apiSearchProductsByName(dispatch, productName)
+    }
+
     const productTableRow = ((product: TProductState, i: number) => {
         return <ProductsTableRow key={product.id} productId={product.id}/>
     })
 
     return (  
-        <div className="products-table">
-            {currentPageData && currentPageData.map(productTableRow)}
-        </div>
+
+
+        <>
+            <input className="input" onChange={searchProducts} placeholder="Поиск по названию"/>
+            <div className="products-table">
+                <ProductsTableRow className='column-names'/>
+                {currentPageData && currentPageData.map(productTableRow)}
+            </div>
+        </>
+        
         
     )
 }
