@@ -1,19 +1,20 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { AppState } from "../../../../main"
+import { TProductState } from "../../../../store/products-table-reducer/types"
 
 interface IProductsTableRow {
-      productNumber: number
+      productId: number
 }
 
-function ProductsTableRow({ productNumber }: IProductsTableRow) {
+function ProductsTableRow({ productId }: IProductsTableRow) {
 
-    const productsData = useSelector((state: AppState) => state.productsTable.products)
-    const product = productsData[productNumber]
+    const productsData = useSelector((state: AppState) => state.productsTable.products) as any
+    const product = productsData.find((product: TProductState) => product.id === productId)
 
     return (
         <div className="products-table-row">
             <li className="products-table-cell">{product.title}</li>
-            <li className="products-table-cell-desctiption">{product.description}</li>
+            <li className="products-table-cell-description">{product.description}</li>
             <li className="products-table-cell">{product.price}</li>
             <li className="products-table-cell">{product.rating}</li>
             <li className="products-table-cell">{product.stock}</li>

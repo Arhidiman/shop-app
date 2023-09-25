@@ -1,7 +1,10 @@
 import { TProductsTableState } from "./types"
 
 export const initialState: TProductsTableState = {
-    products: null,
+    products: [],
     productsLoading: false,
-    productsLoadingError: null
+    productsLoadingError: null,
+    productsInTablePage: 5,
+    totalProductsPagesArray: [],
+    currentProductsPage: 2
 }

@@ -9,17 +9,22 @@ import { TProductState } from "../../../store/products-table-reducer/types"
 function ProductsTable() {
 
     const dispatch = useDispatch()
-    const productsData = useSelector((state: AppState) => state.productsTable.products)
-    console.log(productsData)
+    const { totalProductsPagesArray, currentProductsPage } = useSelector((state: AppState) => state.productsTable)
+    const currentPageData = totalProductsPagesArray[currentProductsPage]
 
     useEffect(() => {
         apiGetAllProductsData(dispatch)
     },[])
 
+    const productTableRow = ((product: TProductState, i: number) => {
+        return <ProductsTableRow key={product.id} productId={product.id}/>
+    })
+
     return (  
-        productsData && productsData.map((product: TProductState, i: number) => {
-            return <ProductsTableRow key={product.id} productNumber={i}/>
-        })
+        <div className="products-table">
+            {currentPageData && currentPageData.map(productTableRow)}
+        </div>
+        
     )
 }
 

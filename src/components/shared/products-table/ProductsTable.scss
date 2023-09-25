@@ -1,16 +1,16 @@
 .products-table {
+    height: 70vh;
     &-row{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
     }  
     &-cell {
         max-width: 350px;
         white-space: break-word;
         text-align: center;
         flex: 1 1 0px;
-        &-desctiption {
+        &-description {
             flex: 2
         }
     } 
@@ -18,5 +18,4 @@
         width: 100px;
         height: 100px;
     } 
-    
 }

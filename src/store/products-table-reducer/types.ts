@@ -1,7 +1,10 @@
 export type TProductsTableState = {
-    products: TProductState[] | null,
+    products: TProductState[] | [],
     productsLoading: boolean,
-    productsLoadingError: string | null
+    productsLoadingError: string | null,
+    productsInTablePage: number | null,
+    totalProductsPagesArray: TTotalProductsPagesArray | [],
+    currentProductsPage: number
 }
 
 export type TProductState = {
@@ -17,3 +20,6 @@ export type TProductState = {
     thumbnail: string | null,
     images: string[] | null
 }
+
+export type TProductPageArray = TProductState[] 
+export type TTotalProductsPagesArray = TProductPageArray[]

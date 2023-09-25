@@ -1,10 +1,15 @@
 import './App.css'
-import ProductsTable from './components/shared/products-table/ProductsTable'
+import Header from './components/shared/header/Header'
+import AppRouter from './providers/AppRouter'
+import MainPage from './components/pages/main-page/MainPage'
 
 function App() {
     return (
         <>
-            <ProductsTable/>
+            <Header/>
+            <main>
+                <MainPage/>
+            </main>
         </>
     )
 }
