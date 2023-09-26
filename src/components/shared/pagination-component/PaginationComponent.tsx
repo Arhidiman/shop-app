@@ -16,7 +16,7 @@ function PaginationComponent() {
     }, [])
     
     const paginationButton = ((button: TProductState[], i: number) => {
-        return <button key={i} className={`pagination-button ${currentProductsPage === i && "selected"}`}  onClick={setCurrentProductsPage}>{i+1}</button>
+        return <button key={i} className={`button-pagination ${currentProductsPage === i && "selected"}`}  onClick={setCurrentProductsPage}>{i+1}</button>
     })
    
     return (

@@ -47,8 +47,6 @@
             }
         }
     } 
- 
-    
 }
 
 .input {
@@ -58,4 +56,12 @@
     outline: none;
     border: solid black 2px;
     align-self: left
+}
+
+.products-table-controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    background: gray;
+    padding: 20px 10px;
 }

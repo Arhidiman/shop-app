@@ -47,7 +47,6 @@ export const productsTableReducer = (state = initialState as TProductsTableState
             return resetFilters(state)
         }
         case SORT_PRODUCTS_WITH_CATEGORIES: {
-            console.log('sort')
             return sortProductsWithProperty(state, action.payload)
         }
         default: return state

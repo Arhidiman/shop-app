@@ -1,9 +1,6 @@
 import { sortBy } from "lodash"
 import { getTotalPagesArray } from "./getTotalPagesArray";
 import { TProductState } from "src/store/products-table-reducer/types";
-
-
-
 import { TProductsTableState } from "src/store/products-table-reducer/types";
 
 const sortProductsWithProperty = (state: TProductsTableState, property: keyof TProductState) => {
@@ -14,11 +11,8 @@ const sortProductsWithProperty = (state: TProductsTableState, property: keyof TP
 
     const sortedProducts = sortBy(products, [(o) => o[property]])
 
-    console.log(sortedProducts)
-
     const newState = {
         ...state, 
-       
         totalProductsPagesArray: getTotalPagesArray(totalProducts, productsInTablePage, sortedProducts),
         currentProductsPage: 0
     }

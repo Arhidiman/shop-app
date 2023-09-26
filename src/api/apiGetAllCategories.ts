@@ -12,7 +12,6 @@ export const apiGetAllCategories = (dispatch: Dispatch<AnyAction>) => {
     axios
         .get(getAllCategoriesUrl)
         .then((res) => {
-            console.log(res.data)
             dispatch(setProductsCategoriesDataAction(res.data))
             dispatch(setProductsCategoriesLoadingAction(false))
         })

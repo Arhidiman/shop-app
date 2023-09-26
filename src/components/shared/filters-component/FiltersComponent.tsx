@@ -7,7 +7,6 @@ import { setProductsCategoriesVisibilityAction, setCurrentCategoryAction } from 
 import { filterProductsWithCategoryAction, resetFiltersAction } from "src/store/products-table-reducer/productsTableReducer"
 import { SyntheticEvent } from 'react'
 
-
 function FiltersComponent() {
 
     const dispatch = useDispatch()
@@ -26,10 +25,10 @@ function FiltersComponent() {
         dispatch(setCurrentCategoryAction(category))
    }, [])
 
-    const resetCategories = () => {
+    const resetCategories = useCallback(() => {
         dispatch(resetFiltersAction())
         dispatch(setCurrentCategoryAction(null))
-    }
+    }, [])
 
     const category = ((category: string, i: number) => {
         return <li 
@@ -43,17 +42,18 @@ function FiltersComponent() {
     
     return (  
         <div className="filters">
-            <button onClick={categoriesList.length === 0 ? getAllCategories : changeCategoriesVisibility}>{!isVisible ? "Показать категории" : "Скрыть категории"}</button>
+            <button className="button-default" onClick={categoriesList.length === 0 ? getAllCategories : changeCategoriesVisibility}>
+                {!isVisible ? "Показать категории" : "Скрыть категории"}
+            </button>
             {
             isVisible && 
             <>
                 <ul className="filters-categories">
                     {categoriesList.length !== 0 && categoriesList.map(category)}
                 </ul>
-                <button onClick={resetCategories}>Сбросить фильтры</button>
+                <button className="button-default" onClick={resetCategories}>Сбросить фильтры</button>
             </>
-            }
-            
+            } 
         </div>
     )
 }
