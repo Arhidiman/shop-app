@@ -25,9 +25,9 @@ function ProductsTableRow({ productId, className }: IProductsTableRow) {
             {
                 productId
                 ? 
-                <img alt="product" src={product.thumbnail} className="products-table-thumbnail"></img>
+                <img alt="product" src={product.thumbnail} className="products-table-cell-thumbnail"></img>
                 : 
-                <li className={`products-table-cell ${className}`}>thimbnail</li>
+                <li className={`products-table-cell-thumbnail ${className}`}>thumbnail</li>
             }
         </div>
     )

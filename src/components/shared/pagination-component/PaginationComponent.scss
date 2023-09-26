@@ -1,6 +1,6 @@
 .pagination {
     display: flex;
-    margin: 0 auto;
+    margin: 20px auto;
     justify-content: center;
     gap: 15px;
     &-button {
@@ -14,7 +14,7 @@
         text-align: center;
         cursor: pointer;
         &.selected {
-            background: rgb(0, 121, 219) ;
+            background: rgb(8, 144, 255) ;
         }
     }
 }

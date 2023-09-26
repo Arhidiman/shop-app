@@ -1,6 +1,5 @@
 .products-table {
     max-width: 1400px;
-    margin: 10px auto;
     padding: 5px;
     row-gap: 200px;
     background: lightgray;
@@ -17,9 +16,9 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 450px;
+        width: 130px;
         min-height: 130px;
-        padding: 15px;
+        padding: 5px;
         margin: auto;
         white-space: break-word;
         text-align: center;
@@ -27,13 +26,29 @@
         background: #242424;
         font-size: 15px;
         &.description {
-            flex: 5
+            flex: 3.5
+        }
+        &.column-names {
+            background: rgb(153, 153, 153);
+            color: black;
+            font-weight: bold;
+        }
+        &-thumbnail {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            &.column-names {
+                background: rgb(153, 153, 153);
+                color: black;
+                font-weight: bold;
+            }
         }
     } 
-    &-thumbnail {
-        width: 120px;
-        height: 120px;
-    } 
+ 
+    
 }
 
 .input {
@@ -43,10 +58,4 @@
     outline: none;
     border: solid black 2px;
     align-self: left
-}
-
-.column-names {
-    background: rgb(153, 153, 153);
-    color: black;
-    font-weight: bold;
 }

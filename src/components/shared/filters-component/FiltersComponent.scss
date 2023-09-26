@@ -1,0 +1,10 @@
+.filters {
+    &-categories-item {
+        text-align: left;
+        cursor: pointer;
+        &.selected { 
+            color: rgb(17, 33, 255);
+            font-weight: bold;
+        }
+    }
+}
